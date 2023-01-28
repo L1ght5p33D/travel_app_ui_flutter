@@ -1,9 +1,24 @@
 import 'package:flutter/material.dart';
 
 List<Map> hoteldata = [
-  {"hotelName": "Paris", "hotelLocation": "3 Activites", "price": "Stuff"},
-  {"hotelName": "Paris", "hotelLocation": "3 Activites", "price": "Stuff"},
-  {"hotelName": "Paris", "hotelLocation": "3 Activites", "price": "Stuff"},
+  {
+    "hotelName": "Paris",
+    "hotelLocation": "3 Activites",
+    "price": "Stuff",
+    "img_path": "assets/images/paris_travel.webp"
+  },
+  {
+    "hotelName": "Paris",
+    "hotelLocation": "3 Activites",
+    "price": "Stuff",
+    "img_path": "assets/images/paris_travel.webp"
+  },
+  {
+    "hotelName": "Paris",
+    "hotelLocation": "3 Activites",
+    "price": "Stuff",
+    "img_path": "assets/images/paris_travel.webp"
+  },
 ];
 
 class HotelCarousel extends StatefulWidget {
@@ -53,9 +68,10 @@ class _HotelCarouselState extends State<HotelCarousel> {
                             Positioned(
                                 bottom: ss.height * .01,
                                 child: Container(
-                                    color: Theme.of(context).backgroundColor,
                                     height: ss.height * .15,
                                     decoration: BoxDecoration(
+                                        color:
+                                            Theme.of(context).backgroundColor,
                                         borderRadius: BorderRadius.circular(
                                             ss.height * .03)),
                                     child: Column(

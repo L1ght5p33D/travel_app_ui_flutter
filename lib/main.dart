@@ -1,5 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter/services.dart';
+import 'package:travel_places_ui/globals.dart';
 import 'package:travel_places_ui/travelHome.dart';
+
+class CustomError extends StatelessWidget {
+  CustomError({Key? key, this.errorDetails}) : super(key: key);
+
+  FlutterErrorDetails? errorDetails;
+  @override
+  Widget build(BuildContext context) {
+    return ListView(children: [
+      Container(
+          color: Colors.tealAccent,
+          child: Center(
+              child: Text(errorDetails.toString(),
+                  style: TextStyle(color: Colors.black))))
+    ]);
+  }
+}
 
 void main() {
   runApp(MyApp());
@@ -27,17 +46,22 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        brightness: Brightness.light,
-        /* light theme settings */
-      ),
+          primarySwatch: Colors.blue,
+          brightness: Brightness.light,
+          textTheme: Theme.of(context).textTheme.apply()),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
         /* dark theme settings */
       ),
-      themeMode: ThemeMode.system,
+      themeMode: _themeMode,
       debugShowCheckedModeBanner: false,
-      home: const TravelHome(),
+      builder: (BuildContext context, Widget? widget) {
+        ErrorWidget.builder = (FlutterErrorDetails errorDetails) {
+          return CustomError(errorDetails: errorDetails);
+        };
+        return widget!;
+      },
+      home: TravelHome(),
     );
   }
 }
