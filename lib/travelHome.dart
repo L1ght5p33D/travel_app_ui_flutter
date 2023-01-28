@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_places_ui/destinationCaro.dart';
 
 class TravelHome extends StatefulWidget {
   const TravelHome({super.key});
@@ -20,7 +21,18 @@ class _TravelHomeState extends State<TravelHome> {
               children: [
                 Text("Your Next Destination"),
               ],
-            )
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                IconButton(
+                    onPressed: () {}, icon: Icon(Icons.airplanemode_on_sharp)),
+                IconButton(onPressed: () {}, icon: Icon(Icons.hotel)),
+                IconButton(onPressed: () {}, icon: Icon(Icons.directions_walk)),
+                IconButton(onPressed: () {}, icon: Icon(Icons.tour))
+              ],
+            ),
+            DestinationCarousel()
           ],
         ),
       ),

@@ -41,7 +41,20 @@ class _DestinationCarouselState extends State<DestinationCarousel> {
                 itemBuilder: (BuildContext context, destinations_idx) {
                   return GestureDetector(
                     onTap: () {},
-                    child: Container(),
+                    child: Container(
+                        width: ss.width * .3,
+                        child: Stack(
+                          alignment: Alignment.topCenter,
+                          children: [
+                            Container(
+                              color: Theme.of(context).backgroundColor,
+                              height: ss.height * .15,
+                              decoration: BoxDecoration(
+                                  borderRadius:
+                                      BorderRadius.circular(ss.height * .03)),
+                            )
+                          ],
+                        )),
                   );
                 }))
       ],
