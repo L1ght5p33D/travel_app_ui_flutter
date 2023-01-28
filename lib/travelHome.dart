@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travel_places_ui/destinationCaro.dart';
+import 'package:travel_places_ui/hotelCaro.dart';
 
 class TravelHome extends StatefulWidget {
   const TravelHome({super.key});
@@ -32,15 +33,11 @@ class _TravelHomeState extends State<TravelHome> {
                 IconButton(onPressed: () {}, icon: Icon(Icons.tour))
               ],
             ),
-            DestinationCarousel()
+            DestinationCarousel(),
+            HotelCarousel()
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

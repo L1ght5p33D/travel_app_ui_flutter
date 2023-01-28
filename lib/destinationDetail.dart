@@ -21,10 +21,35 @@ class _DestinationDetailState extends State<DestinationDetail> {
         Container(
             width: ss.width,
             height: ss.width,
-            child: Hero(
-              tag: widget.pdest["destinationName"],
-              child: Image.asset(widget.pdest["image_path"]),
-            )),
+            child: Stack(children: [
+              Hero(
+                tag: widget.pdest["destinationName"],
+                child: Image.asset(widget.pdest["image_path"]),
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      IconButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          icon: Icon(Icons.arrow_back)),
+                      IconButton(
+                          onPressed: () {
+                            print("search press");
+                          },
+                          icon: Icon(Icons.search))
+                    ],
+                  ),
+                  Row(
+                    children: [Text(widget.pdest["destinationName"])],
+                  )
+                ],
+              )
+            ])),
         Column(mainAxisAlignment: MainAxisAlignment.end, children: [
           Container(
               height: ss.height - (ss.width * .8),
