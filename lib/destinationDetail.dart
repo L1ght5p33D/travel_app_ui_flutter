@@ -41,21 +41,37 @@ class _DestinationDetailState extends State<DestinationDetail> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Padding(
-                          
+                          padding:EdgeInsets.only(top:ss.width * .04),
                           child:IconButton(
                           onPressed: () {
                             Navigator.pop(context);
                           },
-                          icon: Icon(Icons.arrow_back))),
+                          icon: Icon(Icons.arrow_back,
+                            color: Colors.white,
+                          ))),
+                      Padding(
+                        padding:EdgeInsets.only(top:ss.width * .04),
+                      child:
                       IconButton(
                           onPressed: () {
                             print("search press");
                           },
-                          icon: Icon(Icons.search))
+                          icon: Icon(Icons.search,
+                            color: Colors.white,
+                          )))
                     ],
                   ),
                   Row(
-                    children: [Text(widget.pdest["destinationName"])],
+                    children: [
+                      Padding(
+                        padding:EdgeInsets.only(bottom:ss.width * .04, left:ss.width * .04),
+                        child:Text(widget.pdest["destinationName"],
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: ss.width * .07,
+                                          fontWeight: FontWeight.w900
+                          ),
+                        ))],
                   )
                 ],
               )
