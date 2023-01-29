@@ -19,12 +19,14 @@ class _DestinationDetailState extends State<DestinationDetail> {
       height: ss.height,
       child: Stack(children: [
         Container(
-            width: ss.width,
             height: ss.width,
+            width: ss.width,
             child: Stack(children: [
               Hero(
                 tag: widget.pdest["destinationName"],
-                child: Image.asset(widget.pdest["img_path"]),
+                child: Image.asset(widget.pdest["img_path"],
+                
+                ),
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -50,10 +52,11 @@ class _DestinationDetailState extends State<DestinationDetail> {
                 ],
               )
             ])),
-        Column(mainAxisAlignment: MainAxisAlignment.end, children: [
-          Container(
-              height: ss.height - (ss.width * .8),
-              child: ListView.builder(
+        Container(
+            height: ss.height ,
+        child: Column(mainAxisAlignment: MainAxisAlignment.end, children: [
+        Container(
+        height: ss.height - (ss.width ),child: ListView.builder(
                   itemCount: widget.pdest["activities"].length,
                   itemBuilder: (BuildContext context, activities_idx) {
                     return Container(
@@ -96,14 +99,11 @@ class _DestinationDetailState extends State<DestinationDetail> {
                                                   Text(
                                                     widget.pdest["activities"]
                                                             [activities_idx]
-                                                        ["activity_price"],
+                                                        ["activity_price"].toString(),
                                                     overflow:
                                                         TextOverflow.ellipsis,
                                                   ),
-                                                  Text(widget.pdest[
-                                                              "activities"]
-                                                          [activities_idx]
-                                                      ["activity_price_type"]),
+
                                                 ]))
                                           ],
                                         )),
@@ -131,7 +131,7 @@ class _DestinationDetailState extends State<DestinationDetail> {
                               ]))
                         ]));
                   }))
-        ])
+        ]))
       ]),
     ));
   }

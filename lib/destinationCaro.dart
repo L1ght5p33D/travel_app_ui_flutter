@@ -9,7 +9,9 @@ List<Map> destinationdata = [
     "description":
         "Paris is a city unlike any other. It is overflowing with culture, history, and beauty. And while people travel to Paris to see the Louvre",
     "img_path": "assets/images/paris_travel.webp",
-    "activities": [{"activity_name": "hiking", "activity_type":"outdoors", "activity_price": 20}]
+    "activities": [{"activity_name": "hiking",
+      "activity_type":"outdoors", "activity_price": 20,
+      "img_path":"assets/images/paris_travel.webp", "num_stars": 4, "times_list":["8:00", "9:00"] }]
   },
   {
     "destinationName": "New York",
@@ -17,7 +19,9 @@ List<Map> destinationdata = [
     "description":
         "Cool, cosmopolitan, crowded, constantly evolving … the Big Apple blends big city splendor with small-town charm. Amid New York's iconic landmarks and towering skyscrapers",
     "img_path": "assets/images/paris_travel.webp",
-    "activities": [{"activity_name": "hiking", "activity_type":"outdoors", "activity_price": 20}]
+    "activities": [{"activity_name": "hiking",
+      "activity_type":"outdoors", "activity_price": 20,
+      "img_path":"assets/images/paris_travel.webp", "num_stars": 4, "times_list":["8:00", "9:00"] }]
   },
   {
     "destinationName": "Tokyo",
@@ -25,7 +29,9 @@ List<Map> destinationdata = [
     "description":
         "Today, Tokyo offers a seemingly unlimited choice of shopping, entertainment, culture and dining to its visitors. The city's history can be",
     "img_path": "assets/images/paris_travel.webp",
-    "activities": [{"activity_name": "hiking", "activity_type":"outdoors", "activity_price": 20}]
+    "activities": [{"activity_name": "hiking",
+      "activity_type":"outdoors", "activity_price": 20,
+      "img_path":"assets/images/paris_travel.webp", "num_stars": 4, "times_list":["8:00", "9:00"] }]
   }
 ];
 
