@@ -40,11 +40,13 @@ class _DestinationDetailState extends State<DestinationDetail> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      IconButton(
+                      Padding(
+                          
+                          child:IconButton(
                           onPressed: () {
                             Navigator.pop(context);
                           },
-                          icon: Icon(Icons.arrow_back)),
+                          icon: Icon(Icons.arrow_back))),
                       IconButton(
                           onPressed: () {
                             print("search press");
@@ -65,9 +67,10 @@ class _DestinationDetailState extends State<DestinationDetail> {
         height: ss.height - (ss.width ),child: ListView.builder(
                   itemCount: widget.pdest["activities"].length,
                   itemBuilder: (BuildContext context, activities_idx) {
-                    return Container(
+                    return Padding(
+                        padding: EdgeInsets.all(ss.width*.02),
+                        child:Container(
                         height: ss.height * .2,
-                        width: ss.width * .96,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(ss.width*.05),
                             color: Theme.of(context).canvasColor
@@ -93,13 +96,14 @@ class _DestinationDetailState extends State<DestinationDetail> {
                                 Row(
                                   children: [
                                     Container(
-                                        height: ss.height * .12,
+                                        height: ss.height * .08,
                                         child: Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
                                           children: [
                                             Container(
-                                                width: ss.width * .6,
+                                                width: ss.width * .5,
+                                                padding: EdgeInsets.only(left:ss.width*.02, top:ss.width*.02),
                                                 child: Column(
                                                     crossAxisAlignment: CrossAxisAlignment.start,
                                                     children: [
@@ -107,23 +111,30 @@ class _DestinationDetailState extends State<DestinationDetail> {
                                                     widget.pdest["activities"]
                                                             [activities_idx]
                                                         ["activity_name"],
+                                                    style: TextStyle(fontSize: ss.width * .055,
+                                                                      fontWeight: FontWeight.w500)   ,
                                                     overflow:
                                                         TextOverflow.ellipsis,
                                                   ),
                                                   Text(
                                                       widget.pdest["activities"]
                                                               [activities_idx]
-                                                          ["activity_type"]),
+                                                          ["activity_type"],
+                                                      style: TextStyle(fontSize: ss.width * .04,
+                                                          fontWeight: FontWeight.w300)
+                                                  ),
                                                 ])),
                                             Container(
+                                              padding: EdgeInsets.only(top:ss.width*.05),
                                                 width: ss.width * .15,
                                                 child: Column(children: [
-                                                  Text(
+                                                  Text("\$" +
                                                     widget.pdest["activities"]
                                                             [activities_idx]
                                                         ["activity_price"].toString(),
-                                                    overflow:
-                                                        TextOverflow.ellipsis,
+                                                    style: TextStyle(
+                                                        fontSize: ss.width * .05,
+                                                        fontWeight: FontWeight.w600),
                                                   ),
 
                                                 ]))
@@ -136,25 +147,29 @@ class _DestinationDetailState extends State<DestinationDetail> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Container(
-                                        width: ss.width * .76,
+                                        width: ss.width * .7,
                                         child: Column(
                                             crossAxisAlignment: CrossAxisAlignment.start,
                                             children: [
-                                          RatingWidget(
+                                              Padding(
+                                                padding:EdgeInsets.all(ss.width*.01),
+                                          child:RatingWidget(
                                               num_stars:
                                                   widget.pdest["activities"]
                                                           [activities_idx]
-                                                      ["num_stars"]),
-                                          TimesWidget(
+                                                      ["num_stars"])),
+                            Padding(
+                                padding:EdgeInsets.all(ss.width*.01),
+                                child:TimesWidget(
                                               times_list:
                                                   widget.pdest["activities"]
                                                           [activities_idx]
-                                                      ["times_list"])
+                                                      ["times_list"]))
                                         ])),
                                   ],
                                 )
                               ]))
-                        ]));
+                        ])));
                   }))
         ]))
       ]),
@@ -174,7 +189,7 @@ class RatingWidget extends StatelessWidget {
 
     int bsidx = 0;
     while (bsidx < num_stars) {
-      build_stars.add(Container(child: Icon(Icons.star, size:ss.width * .05)));
+      build_stars.add(Container(child: Icon(Icons.star, color:Colors.yellow[700], size:ss.width * .05)));
       bsidx += 1;
     }
     return Row(
