@@ -11,7 +11,10 @@ List<Map> destinationdata = [
     "img_path": "assets/images/paris_travel.webp",
     "activities": [{"activity_name": "hiking",
       "activity_type":"outdoors", "activity_price": 20,
-      "img_path":"assets/images/paris_travel.webp", "num_stars": 4, "times_list":["8:00", "9:00"] }]
+      "img_path":"assets/images/paris_travel.webp", "num_stars": 4, "times_list":["8:00", "9:00"] },
+      {"activity_name": "hiking",
+        "activity_type":"outdoors", "activity_price": 20,
+        "img_path":"assets/images/paris_travel.webp", "num_stars": 4, "times_list":["8:00", "9:00"] }]
   },
   {
     "destinationName": "New York",
@@ -21,7 +24,10 @@ List<Map> destinationdata = [
     "img_path": "assets/images/paris_travel.webp",
     "activities": [{"activity_name": "hiking",
       "activity_type":"outdoors", "activity_price": 20,
-      "img_path":"assets/images/paris_travel.webp", "num_stars": 4, "times_list":["8:00", "9:00"] }]
+      "img_path":"assets/images/paris_travel.webp", "num_stars": 4, "times_list":["8:00", "9:00"] },
+      {"activity_name": "hiking",
+        "activity_type":"outdoors", "activity_price": 20,
+        "img_path":"assets/images/paris_travel.webp", "num_stars": 4, "times_list":["8:00", "9:00"] }]
   },
   {
     "destinationName": "Tokyo",
@@ -31,7 +37,10 @@ List<Map> destinationdata = [
     "img_path": "assets/images/paris_travel.webp",
     "activities": [{"activity_name": "hiking",
       "activity_type":"outdoors", "activity_price": 20,
-      "img_path":"assets/images/paris_travel.webp", "num_stars": 4, "times_list":["8:00", "9:00"] }]
+      "img_path":"assets/images/paris_travel.webp", "num_stars": 4, "times_list":["8:00", "9:00"] },
+      {"activity_name": "hiking",
+        "activity_type":"outdoors", "activity_price": 20,
+        "img_path":"assets/images/paris_travel.webp", "num_stars": 4, "times_list":["8:00", "9:00"] }]
   }
 ];
 
@@ -101,8 +110,8 @@ class _DestinationCarouselState extends State<DestinationCarousel> {
                                 Positioned(
                                     bottom: ss.height * .01,
                                     child: Container(
-                                        height: ss.height * .53,
-                                        width: ss.width * .46,
+                                        height: ss.width * .33,
+                                        width: ss.width * .48,
                                         decoration: BoxDecoration(
                                             // color: Colors.black,
                                             color:
@@ -118,31 +127,36 @@ class _DestinationCarouselState extends State<DestinationCarousel> {
                                           children: [
                                         Container(
                                         // height: ss.height * (.53 - .48 -.02),
-                                          child: Text(
+                                            padding: EdgeInsets.only(bottom:ss.width * .01, left: ss.width * .01,  right: ss.width * .01),
+                                            child: Text(
                                               destinationdata[destinations_idx]
                                                   ["activityCount"],
                                             style: TextStyle(fontWeight: FontWeight.w700),
                                             )),
                                             Padding(
-                                                padding: EdgeInsets.only(bottom:ss.height * (.53 - .48 -.02)),
+                                                padding: EdgeInsets.only(bottom:ss.height * (.53 - .48 ), left: ss.width * .01,  right: ss.width * .01),
                                                 child:
+                                                    Expanded(child:
                                             Text(
                                               destinationdata[destinations_idx]
                                                   ["description"],
                                               overflow: TextOverflow.ellipsis,
-                                            ))
+                                              softWrap: true,
+                                              style: TextStyle(fontSize: ss.width * .035,
+                                                                fontWeight: FontWeight.w200) ,
+                                            )))
                                           ],
                                         ))),
                                 Container(
                                   height: ss.width * .46,
-                                  width: ss.width * .5,
+                                  width: ss.width * .44,
                                   child: Stack(children: [
                                     Hero(
                                       tag: destinationdata[destinations_idx]
                                           ["destinationName"],
                                       child: Container(
                                           height: ss.width * .46,
-                                          width: ss.width * .5,
+                                          width: ss.width * .44,
                                           child: ClipRRect(
                                               borderRadius:
                                                   BorderRadius.circular(
@@ -151,8 +165,8 @@ class _DestinationCarouselState extends State<DestinationCarousel> {
                                                   destinationdata[
                                                           destinations_idx]
                                                       ["img_path"],
-                                                  height: ss.height * .25,
-                                                  width: ss.height * .25,
+                                                  height: ss.width * .33,
+                                                  width: ss.width * .44,
                                                   fit: BoxFit.fill))),
                                     ),
                                     Container(
