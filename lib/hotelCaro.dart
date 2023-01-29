@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 List<Map> hoteldata = [
   {
     "hotelName": "Paris",
-    "hotelLocation": "3 Activites",
+    "hotelLocation": "5 Activites",
     "price": "Stuff",
     "img_path": "assets/images/paris_travel.webp"
   },
   {
     "hotelName": "Paris",
-    "hotelLocation": "3 Activites",
+    "hotelLocation": "2 Activites",
     "price": "Stuff",
     "img_path": "assets/images/paris_travel.webp"
   },
@@ -36,7 +37,9 @@ class _HotelCarouselState extends State<HotelCarousel> {
       children: [
         Padding(
             padding: EdgeInsets.symmetric(horizontal: ss.width * .04),
-            child: Row(children: [
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
               Text("Exclusive Hotels",
                   style: TextStyle(fontSize: ss.width * .07)),
               GestureDetector(
@@ -66,7 +69,7 @@ class _HotelCarouselState extends State<HotelCarousel> {
                           alignment: Alignment.topCenter,
                           children: [
                             Positioned(
-                                bottom: ss.height * .01,
+                                bottom: ss.height * .1,
                                 child: Container(
                                     height: ss.height * .15,
                                     decoration: BoxDecoration(
@@ -76,6 +79,7 @@ class _HotelCarouselState extends State<HotelCarousel> {
                                             ss.height * .03)),
                                     child: Column(
                                       mainAxisAlignment: MainAxisAlignment.end,
+                                      mainAxisSize: MainAxisSize.min,
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
