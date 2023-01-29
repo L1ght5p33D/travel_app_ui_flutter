@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 class DestinationDetail extends StatefulWidget {
   DestinationDetail(
@@ -24,10 +25,15 @@ class _DestinationDetailState extends State<DestinationDetail> {
             child: Stack(children: [
               Hero(
                 tag: widget.pdest["destinationName"],
-                child: Image.asset(widget.pdest["img_path"],
-                
+                child: ClipRRect(
+                  borderRadius:
+                      BorderRadius.only(bottomLeft: Radius.circular(ss.width*.08), bottomRight: Radius.circular(ss.width*.08)),
+                  child: Image.asset(widget.pdest["img_path"],
+                                  height: ss.width,
+                                  width: ss.width,
+                                  fit:BoxFit.fill
                 ),
-              ),
+              )),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -61,15 +67,29 @@ class _DestinationDetailState extends State<DestinationDetail> {
                   itemBuilder: (BuildContext context, activities_idx) {
                     return Container(
                         height: ss.height * .2,
+                        width: ss.width * .96,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(ss.width*.05),
+                            color: Theme.of(context).canvasColor
+                        ),
                         child: Row(children: [
                           Container(
                               height: ss.height * .2,
                               width: ss.width * .24,
-                              child: Image.asset(widget.pdest["activities"]
-                                  [activities_idx]["img_path"])),
+                              child:ClipRRect(
+                                  borderRadius:
+                                  BorderRadius.circular(
+                                      ss.width * .04),
+                                  child:  Image.asset(widget.pdest["activities"]
+                                  [activities_idx]["img_path"],
+                                    height: ss.height * .2,
+                                    width: ss.width * .24,
+                                    fit:BoxFit.fill
+                                  ))),
                           Container(
                               height: ss.height * .2,
-                              child: Column(children: [
+                              child: Column(
+                                  children: [
                                 Row(
                                   children: [
                                     Container(
@@ -79,8 +99,10 @@ class _DestinationDetailState extends State<DestinationDetail> {
                                               MainAxisAlignment.spaceBetween,
                                           children: [
                                             Container(
-                                                width: ss.width * .15,
-                                                child: Column(children: [
+                                                width: ss.width * .6,
+                                                child: Column(
+                                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                                    children: [
                                                   Text(
                                                     widget.pdest["activities"]
                                                             [activities_idx]
@@ -111,10 +133,13 @@ class _DestinationDetailState extends State<DestinationDetail> {
                                 ),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.start,
+                                  mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Container(
-                                        height: ss.height * .15,
-                                        child: Column(children: [
+                                        width: ss.width * .76,
+                                        child: Column(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
                                           RatingWidget(
                                               num_stars:
                                                   widget.pdest["activities"]
@@ -143,11 +168,13 @@ class RatingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    var ss = MediaQuery.of(context).size;
     List<Widget> build_stars = [];
 
     int bsidx = 0;
     while (bsidx < num_stars) {
-      build_stars.add(Container(child: Icon(Icons.star)));
+      build_stars.add(Container(child: Icon(Icons.star, size:ss.width * .05)));
       bsidx += 1;
     }
     return Row(
@@ -163,6 +190,7 @@ class TimesWidget extends StatelessWidget {
   List times_list;
   @override
   Widget build(BuildContext context) {
+    Size ss = MediaQuery.of(context).size;
     List<Widget> build_times = [];
 
     int btidx = 0;
@@ -171,7 +199,15 @@ class TimesWidget extends StatelessWidget {
         build_times.add(Container(child: Text("...")));
         break;
       }
-      build_times.add(Container(child: Text(times_list[btidx])));
+      build_times.add(Padding(
+        padding: EdgeInsets.symmetric(horizontal: ss.width*.02),
+          child:Container(
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(ss.width * .04),
+            color: Theme.of(context).scaffoldBackgroundColor,),
+
+          child: Padding(
+              padding: EdgeInsets.fromLTRB(ss.width * .04, ss.width * .01, ss.width * .04, ss.width * .01),
+              child:Text(times_list[btidx])))));
       btidx += 1;
     }
 
