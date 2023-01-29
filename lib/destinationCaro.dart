@@ -8,21 +8,24 @@ List<Map> destinationdata = [
     "activityCount": "5 Activites",
     "description":
         "Paris is a city unlike any other. It is overflowing with culture, history, and beauty. And while people travel to Paris to see the Louvre",
-    "img_path": "assets/images/paris_travel.webp"
+    "img_path": "assets/images/paris_travel.webp",
+    "activities": [{"activity_name": "hiking", "activity_type":"outdoors", "activity_price": 20}]
   },
   {
     "destinationName": "New York",
     "activityCount": "2 Activites",
     "description":
         "Cool, cosmopolitan, crowded, constantly evolving … the Big Apple blends big city splendor with small-town charm. Amid New York's iconic landmarks and towering skyscrapers",
-    "img_path": "assets/images/paris_travel.webp"
+    "img_path": "assets/images/paris_travel.webp",
+    "activities": [{"activity_name": "hiking", "activity_type":"outdoors", "activity_price": 20}]
   },
   {
     "destinationName": "Tokyo",
     "activityCount": "3 Activites",
     "description":
         "Today, Tokyo offers a seemingly unlimited choice of shopping, entertainment, culture and dining to its visitors. The city's history can be",
-    "img_path": "assets/images/paris_travel.webp"
+    "img_path": "assets/images/paris_travel.webp",
+    "activities": [{"activity_name": "hiking", "activity_type":"outdoors", "activity_price": 20}]
   }
 ];
 
@@ -71,6 +74,7 @@ class _DestinationCarouselState extends State<DestinationCarousel> {
                           ss.width * .04, ss.width * .02, ss.width * .04, 0.0),
                       child: GestureDetector(
                         onTap: () {
+                          print("get dest indx" + destinations_idx.toString());
                           Navigator.of(context)
                               .push(MaterialPageRoute(builder: (context) {
                             return DestinationDetail(

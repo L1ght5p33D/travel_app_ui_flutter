@@ -3,19 +3,19 @@ import 'package:flutter/rendering.dart';
 
 List<Map> hoteldata = [
   {
-    "hotelName": "Paris",
+    "hotelName": "Bellmond",
     "hotelLocation": "5 Activites",
     "price": "Stuff",
     "img_path": "assets/images/paris_travel.webp"
   },
   {
-    "hotelName": "Paris",
+    "hotelName": "Waldorf",
     "hotelLocation": "2 Activites",
     "price": "Stuff",
     "img_path": "assets/images/paris_travel.webp"
   },
   {
-    "hotelName": "Paris",
+    "hotelName": "Ritz",
     "hotelLocation": "3 Activites",
     "price": "Stuff",
     "img_path": "assets/images/paris_travel.webp"

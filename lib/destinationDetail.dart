@@ -15,7 +15,7 @@ class _DestinationDetailState extends State<DestinationDetail> {
   @override
   Widget build(BuildContext context) {
     var ss = MediaQuery.of(context).size;
-    return Container(
+    return Scaffold(body:Container(
       height: ss.height,
       child: Stack(children: [
         Container(
@@ -24,7 +24,7 @@ class _DestinationDetailState extends State<DestinationDetail> {
             child: Stack(children: [
               Hero(
                 tag: widget.pdest["destinationName"],
-                child: Image.asset(widget.pdest["image_path"]),
+                child: Image.asset(widget.pdest["img_path"]),
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -63,7 +63,7 @@ class _DestinationDetailState extends State<DestinationDetail> {
                               height: ss.height * .2,
                               width: ss.width * .24,
                               child: Image.asset(widget.pdest["activities"]
-                                  [activities_idx]["image_path"])),
+                                  [activities_idx]["img_path"])),
                           Container(
                               height: ss.height * .2,
                               child: Column(children: [
@@ -133,7 +133,7 @@ class _DestinationDetailState extends State<DestinationDetail> {
                   }))
         ])
       ]),
-    );
+    ));
   }
 }
 
