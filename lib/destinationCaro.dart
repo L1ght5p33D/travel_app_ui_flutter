@@ -64,7 +64,8 @@ class _DestinationCarouselState extends State<DestinationCarousel> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
               Text("Top Destinations",
-                  style: TextStyle(fontSize: ss.width * .07)),
+                  style: TextStyle(fontSize: ss.width * .05,
+                      fontWeight: FontWeight.w600)),
               GestureDetector(
                 onTap: () {
                   print("push see all");
@@ -127,24 +128,29 @@ class _DestinationCarouselState extends State<DestinationCarousel> {
                                           children: [
                                         Container(
                                         // height: ss.height * (.53 - .48 -.02),
-                                            padding: EdgeInsets.only(bottom:ss.width * .01, left: ss.width * .01,  right: ss.width * .01),
+                                            padding: EdgeInsets.only(bottom:ss.width * .01, left: ss.width * .01,  right: ss.width * .01, top:ss.width * .12),
                                             child: Text(
                                               destinationdata[destinations_idx]
                                                   ["activityCount"],
                                             style: TextStyle(fontWeight: FontWeight.w700),
                                             )),
                                             Padding(
-                                                padding: EdgeInsets.only(bottom:ss.height * (.53 - .48 ), left: ss.width * .01,  right: ss.width * .01),
+                                                padding: EdgeInsets.only(
+                                                    bottom:ss.width * .01, left: ss.width * .02,  right: ss.width * .01),
+                                                    child:
+                                            SizedBox(
+                                                height: ss.width * .12,
+                                                width: ss.width * .44,
                                                 child:
-                                                    Expanded(child:
-                                            Text(
+                                                    Text(
                                               destinationdata[destinations_idx]
                                                   ["description"],
-                                              overflow: TextOverflow.ellipsis,
+                                              // overflow: TextOverflow.ellipsis,
                                               softWrap: true,
                                               style: TextStyle(fontSize: ss.width * .035,
                                                                 fontWeight: FontWeight.w200) ,
-                                            )))
+                                            ))
+                                            )
                                           ],
                                         ))),
                                 Container(
