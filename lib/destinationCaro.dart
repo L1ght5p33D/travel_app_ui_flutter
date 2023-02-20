@@ -14,11 +14,20 @@ List<Map> destinationdata = [
       "img_path":"assets/images/paris_travel.webp", "num_stars": 4, "times_list":["8:00", "9:00"] },
       {"activity_name": "hiking",
         "activity_type":"outdoors", "activity_price": 20,
+        "img_path":"assets/images/paris_travel.webp", "num_stars": 4, "times_list":["8:00", "9:00"] },
+      {"activity_name": "hiking",
+        "activity_type":"outdoors", "activity_price": 20,
+        "img_path":"assets/images/paris_travel.webp", "num_stars": 4, "times_list":["8:00", "9:00"] },
+      {"activity_name": "hiking",
+        "activity_type":"outdoors", "activity_price": 20,
+        "img_path":"assets/images/paris_travel.webp", "num_stars": 4, "times_list":["8:00", "9:00"] },
+      {"activity_name": "hiking",
+        "activity_type":"outdoors", "activity_price": 20,
         "img_path":"assets/images/paris_travel.webp", "num_stars": 4, "times_list":["8:00", "9:00"] }]
   },
   {
     "destinationName": "New York",
-    "activityCount": "2 Activites",
+    "activityCount": "4 Activites",
     "description":
         "Cool, cosmopolitan, crowded, constantly evolving … the Big Apple blends big city splendor with small-town charm. Amid New York's iconic landmarks and towering skyscrapers",
     "img_path": "assets/images/paris_travel.webp",
@@ -27,11 +36,17 @@ List<Map> destinationdata = [
       "img_path":"assets/images/paris_travel.webp", "num_stars": 4, "times_list":["8:00", "9:00"] },
       {"activity_name": "hiking",
         "activity_type":"outdoors", "activity_price": 20,
+        "img_path":"assets/images/paris_travel.webp", "num_stars": 4, "times_list":["8:00", "9:00"] },
+      {"activity_name": "hiking",
+        "activity_type":"outdoors", "activity_price": 20,
+        "img_path":"assets/images/paris_travel.webp", "num_stars": 4, "times_list":["8:00", "9:00"] },
+      {"activity_name": "hiking",
+        "activity_type":"outdoors", "activity_price": 20,
         "img_path":"assets/images/paris_travel.webp", "num_stars": 4, "times_list":["8:00", "9:00"] }]
   },
   {
     "destinationName": "Tokyo",
-    "activityCount": "3 Activites",
+    "activityCount": "2 Activites",
     "description":
         "Today, Tokyo offers a seemingly unlimited choice of shopping, entertainment, culture and dining to its visitors. The city's history can be",
     "img_path": "assets/images/paris_travel.webp",
@@ -87,7 +102,7 @@ class _DestinationCarouselState extends State<DestinationCarousel> {
                 itemBuilder: (BuildContext context, destinations_idx) {
                   return Padding(
                       padding: EdgeInsets.fromLTRB(
-                          ss.width * .04, ss.width * .02, ss.width * .04, 0.0),
+                          ss.width * .02, ss.width * .02, ss.width * .02, 0.0),
                       child: GestureDetector(
                         onTap: () {
                           print("get dest indx" + destinations_idx.toString());
@@ -98,7 +113,7 @@ class _DestinationCarouselState extends State<DestinationCarousel> {
                           }));
                         },
                         child: Container(
-                            width: ss.width * .53,
+                            width: ss.width * .64,
                           decoration: BoxDecoration(
                             // color: Colors.black,
                               color:
@@ -112,7 +127,7 @@ class _DestinationCarouselState extends State<DestinationCarousel> {
                                     bottom: ss.height * .01,
                                     child: Container(
                                         height: ss.width * .33,
-                                        width: ss.width * .48,
+                                        width: ss.width * .58,
                                         decoration: BoxDecoration(
                                             // color: Colors.black,
                                             color:
@@ -155,14 +170,14 @@ class _DestinationCarouselState extends State<DestinationCarousel> {
                                         ))),
                                 Container(
                                   height: ss.width * .46,
-                                  width: ss.width * .44,
+                                  width: ss.width * .55,
                                   child: Stack(children: [
                                     Hero(
                                       tag: destinationdata[destinations_idx]
                                           ["destinationName"],
                                       child: Container(
                                           height: ss.width * .46,
-                                          width: ss.width * .44,
+                                          width: ss.width * .55,
                                           child: ClipRRect(
                                               borderRadius:
                                                   BorderRadius.circular(
@@ -172,7 +187,7 @@ class _DestinationCarouselState extends State<DestinationCarousel> {
                                                           destinations_idx]
                                                       ["img_path"],
                                                   height: ss.width * .33,
-                                                  width: ss.width * .44,
+                                                  width: ss.width * .55,
                                                   fit: BoxFit.fill))),
                                     ),
                                     Container(

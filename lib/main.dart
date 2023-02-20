@@ -43,6 +43,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+
     return MaterialApp(
       title: 'Flutter Travel UI Demo',
       theme: ThemeData(
@@ -58,7 +59,8 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       builder: (BuildContext context, Widget? widget) {
         ErrorWidget.builder = (FlutterErrorDetails errorDetails) {
-          return CustomError(errorDetails: errorDetails);
+          // return CustomError(errorDetails: errorDetails);
+        return Container();
         };
         return widget!;
       },

@@ -33,7 +33,7 @@ class _TravelHomeState extends State<TravelHome> {
 
     if (airplane_fill_color_active) {
         airplane_fill_color = Color(0xffbbfce4);
-        airplane_icon_color = Colors.teal;
+        airplane_icon_color = Colors.black;
     }
     else{
         airplane_fill_color = Colors.white;
@@ -41,7 +41,7 @@ class _TravelHomeState extends State<TravelHome> {
          }
     if (bed_fill_color_active) {
         bed_fill_color = Color(0xffbbfce4);
-        bed_icon_color = Colors.teal;
+        bed_icon_color = Colors.black;
     }
     else{
         bed_fill_color = Colors.white;
@@ -49,7 +49,7 @@ class _TravelHomeState extends State<TravelHome> {
    }
     if (walk_fill_color_active) {
         walk_fill_color = Color(0xffbbfce4);
-        walk_icon_color = Colors.teal;
+        walk_icon_color = Colors.black;
     }
     else{
         walk_fill_color = Colors.white;
@@ -57,7 +57,7 @@ class _TravelHomeState extends State<TravelHome> {
        }
     if (flag_fill_color_active) {
         flag_fill_color = Color(0xffbbfce4);
-        flag_icon_color = Colors.teal;
+        flag_icon_color = Colors.black;
     }
     else{
         flag_fill_color = Colors.white;
